@@ -1,0 +1,25 @@
+Precisa de agente instalado nas maquinas.
+Role com permissões,
+
+comandos ec2 AWs:
+
+#instalando apache
+sudo yum update -y
+sudo yum install httpd -y
+sudo systemctl start httpd
+sudo systemctl enable httpd
+
+#instalando code deploy agent
+
+sudo yum install ruby -y
+#wget https://bucket-name.s3.region-identifier.amazonaws.com/latest/install
+wget https://aws-codedeploy-us-east-1.s3.us-east-1.amazonaws.com/latest/install
+sudo chmod +x ./install
+sudo ./install auto
+
+#anexar uma role no ec2 para ter as devidas permissoes
+
+#Projeto desse repositorio do codedeploy
+./app/
+./scripts
+.appspec.yml
